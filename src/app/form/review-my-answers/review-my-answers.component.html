@@ -1,0 +1,14 @@
+<form class="review-my-answers-form">
+    <section *ngIf="details.questionType == 'paragraph'">
+        <h2>{{question}}</h2>
+        <p>{{details.descAboutYourself}}</p>
+    </section>
+    <section *ngIf="details.questionType == 'checkbox-list'">
+        <h2>{{question}}</h2>
+        <li *ngFor="let item of checkboxData; index as i;">{{item}}</li>
+    </section>
+    <section class="backToFormBuilder">
+        <a routerLink="/form/builder">Back to Forms Builder</a>
+    </section>
+</form>
+

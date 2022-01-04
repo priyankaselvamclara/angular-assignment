@@ -1,0 +1,54 @@
+<h1 mat-dialog-title>Add Answer Form</h1>
+<div mat-dialog-content class="dialog-add-question">
+  <form class="add-question-form">
+    <section *ngIf="questionType=='paragraph'">
+      <mat-label class="aboutYourselfLabel">{{question}}</mat-label>
+      <mat-form-field>
+        <textarea matInput [(ngModel)]="descAboutYourself" name="descAboutYourself"></textarea>
+      </mat-form-field>
+    </section>
+    <section *ngIf="questionType=='checkbox-list'" [formGroup]="checkbox">
+      <h4>{{question}}</h4>
+      <p><mat-checkbox formControlName="answer1">{{answer1}}</mat-checkbox></p>
+      <p><mat-checkbox formControlName="answer2">{{answer2}}</mat-checkbox></p>
+      <p><mat-checkbox formControlName="Other" [checked]="otherOption" (click)="showHideInput()">Other</mat-checkbox></p>
+    </section>
+    <mat-form-field appearance="fill" class="otherOptionInput">
+      <input matInput type="text" placeholder="Enter the other option *" [(ngModel)]="otherOptionInput" value="" name="otherOptionInput">
+    </mat-form-field>
+  </form>
+</div>
+<!--div *ngIf="showQuestion" class="addAdditionQuestionBlock">
+  <section>
+    <mat-form-field>
+        <mat-label>Choose your question type</mat-label>
+        <mat-select (selectionChange)="selectQuestionType($event)">
+            <mat-option *ngFor="let option of questionTypes" [value]="option.value">
+                {{option.viewValue}}
+            </mat-option>
+        </mat-select>
+      </mat-form-field>
+  </section>
+  <section>
+    <mat-form-field>
+        <mat-label>Type question here</mat-label>
+        <input matInput [(ngModel)]="additionalQuestionDet.question" name="question">
+    </mat-form-field>
+    <mat-form-field *ngIf="questionType=='checkbox-list'">
+        <mat-label>Add Answer Option</mat-label>
+        <input matInput [(ngModel)]='additionalQuestionDet.answer1' name="answer1">
+    </mat-form-field>
+    <mat-form-field *ngIf="questionType=='checkbox-list'">
+        <mat-label>Add Answer option</mat-label>
+        <input matInput [(ngModel)]='additionalQuestionDet.answer2' name="answer2">
+    </mat-form-field>   
+    </section>
+    <section class="addAnotherAnswerBlk" *ngIf="questionType=='checkbox-list'">
+        <a>+ Add another answer</a>
+    </section>
+</div-->
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Add New Questions</button>
+</div>
+
+<button class="reviewMyAnswers" mat-button routerLink="/form/answers" apperance="fill" (click)="passDataToService(descAboutYourself, checkbox.value, otherOptionInput, question, questionType)">Review my Answers ></button>

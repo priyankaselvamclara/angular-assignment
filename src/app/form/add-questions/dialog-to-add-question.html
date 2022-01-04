@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>Add a New Questions </h1>
+<div mat-dialog-content class="add-new-question-form">
+  <form class="add-question-form">
+    <section>
+        <mat-form-field>
+            <mat-label>Choose your question type</mat-label>
+            <mat-select (selectionChange)="selectQuestionType($event)">
+                <mat-option *ngFor="let option of questionTypes" [value]="option.value">
+                    {{option.viewValue}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </section>
+    <section>
+        <mat-form-field>
+            <mat-label>Type question here</mat-label>
+            <input matInput [(ngModel)]='question' name="question">
+        </mat-form-field>
+        <mat-form-field *ngIf="questionType=='checkbox-list'">
+            <mat-label>Add Answer Option</mat-label>
+            <input matInput [(ngModel)]='answer1' name="answer1">
+        </mat-form-field>
+        <mat-form-field *ngIf="questionType=='checkbox-list'">
+            <mat-label>Add Answer option</mat-label>
+            <input matInput [(ngModel)]='answer2' name="answer2">
+        </mat-form-field>   
+    </section>
+    <section class="addAnotherAnswerBlk" *ngIf="questionType=='checkbox-list'">
+        <a>+ Add another answer</a>
+    </section>
+    <div mat-dialog-actions class="buttonSection">
+        <button mat-stroked-button (click)="openAnswerDialog()">Submit</button>
+      </div>
+  </form>
+  <!--<app-dialog-add-answer [questionType]="questionType" *ngIf="flagShow"></app-dialog-add-answer>-->
+</div>

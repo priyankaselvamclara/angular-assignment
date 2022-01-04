@@ -1,0 +1,10 @@
+.review-my-answers-form {
+    width: 500px;
+    margin: auto;
+    border: 1px solid rgb(24, 23, 23);
+    margin-top: 7rem;
+    padding: 1.5rem;
+}
+.backToFormBuilder {
+    margin-top: 4rem;
+}

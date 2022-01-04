@@ -1,0 +1,49 @@
+
+::ng-deep .cdk-overlay-pane {
+    min-width:500px !important;
+}
+.aboutYourselfLabel {
+    display: block;
+}
+.add-question-button-form {
+    width: 500px;
+    margin: auto;
+    padding: 2rem;
+    border:1px solid black;
+    margin-top: 100px;
+}
+.add-question-form mat-form-field, .addAdditionQuestionBlock mat-form-field{
+    display: block;
+    width: 90%;
+}
+.reviewMyAnswers {
+    float: right;
+    background-color: lightgrey;
+}
+.add-question-form .otherOptionInput {
+    display: none ;
+}
+.dialog-add-question
+
+/*add new question styles*/
+.add-new-question-form {
+    width: 500px;
+    margin: auto;
+    margin-top: 2rem;
+    border: 1px solid black;
+    padding: 1rem;
+}
+.add-new-question-form mat-form-field {
+    display: block;
+    margin: 0.5rem;
+    background-color: transparent;
+}
+.add-new-question-form mat-form-field .mat-form-field-flex {
+    border: 1px solid black !important;
+}
+.add-new-question-form .addAnotherAnswerBlk {
+    color: blue;
+}
+.add-new-question-form .buttonSection {
+    float: right;
+}
